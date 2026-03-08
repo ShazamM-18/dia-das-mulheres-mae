@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Para minha mãe 🌸</title>
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+background:#ffe6f0;
+font-family:Arial;
+text-align:center;
+}
+
+h2{
+margin-top:20px;
+}
+
+.flower{
+position:absolute;
+font-size:40px;
+cursor:pointer;
+}
+
+#mensagem{
+display:none;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Clique nas flores 🌸</h2>
+
+<div id="mensagem">
+<h3>Feliz Dia das Mulheres 💐</h3>
+<p>Mãe, obrigado por todo carinho e por sempre estar ao meu lado.</p>
+<p>Você é muito especial para mim.</p>
+<b>Com carinho, Michel ❤️</b>
+</div>
+
+<script>
+
+let count = 0;
+
+function criarFlor(){
+
+let flor = document.createElement("div");
+flor.innerHTML="🌸";
+flor.className="flower";
+
+flor.style.left = Math.random()*window.innerWidth+"px";
+flor.style.top = Math.random()*window.innerHeight+"px";
+
+flor.onclick=function(){
+
+flor.remove();
+count++;
+
+if(count >= 5){
+document.getElementById("mensagem").style.display="block";
+}
+
+};
+
+document.body.appendChild(flor);
+
+}
+
+setInterval(criarFlor,800);
+
+</script>
+
+</body>
+</html>
